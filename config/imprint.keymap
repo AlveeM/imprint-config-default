@@ -27,14 +27,14 @@
 
         Symbols {
             bindings = <
-&trans     &trans     &trans          &trans    &trans          &trans                      &trans             &trans           &trans        &trans                &trans                 &trans
-&trans     &trans     &trans          &trans    &trans          &trans                      &trans             &trans           &trans        &trans                &trans                 &trans
-&kp GRAVE  &kp EXCL   &kp AT          &kp HASH  &kp DOLLAR      &kp PERCENT                 &kp CARET          &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH
-&kp CAPS   &kp TILDE  &kp UNDERSCORE  &trans    &kp LEFT_BRACE  &kp LEFT_BRACKET            &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans        &kp MINUS             &kp EQUAL              &kp PIPE
-&trans     &kp N1     &kp N2          &kp N3    &kp N4          &kp N5                      &kp N6             &kp N7           &kp N8        &kp N9                &kp N0                 &trans
-                      &trans          &trans                                                                                    &trans        &trans
-                                                &trans          &trans            &trans    &trans             &trans           &trans
-                                                &trans          &trans            &trans    &trans             &trans           &trans
+&trans         &trans     &trans          &trans    &trans          &trans                      &trans             &trans           &trans        &trans                &trans                 &trans
+&trans         &trans     &trans          &trans    &trans          &trans                      &trans             &trans           &trans        &trans                &trans                 &trans
+&kp GRAVE      &kp EXCL   &kp AT          &kp HASH  &kp DOLLAR      &kp PERCENT                 &kp CARET          &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH
+&kp LG(GRAVE)  &kp TILDE  &kp UNDERSCORE  &trans    &kp LEFT_BRACE  &kp LEFT_BRACKET            &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans        &kp MINUS             &kp EQUAL              &kp PIPE
+&kp CAPS       &kp N1     &kp N2          &kp N3    &kp N4          &kp N5                      &kp N6             &kp N7           &kp N8        &kp N9                &kp N0                 &trans
+                          &trans          &trans                                                                                    &trans        &trans
+                                                    &trans          &trans            &trans    &trans             &trans           &trans
+                                                    &trans          &trans            &trans    &trans             &trans           &trans
             >;
         };
 
@@ -42,9 +42,9 @@
             bindings = <
 &trans       &trans      &trans        &trans        &trans        &trans                  &trans          &trans           &trans           &trans           &trans           &trans
 &trans       &trans      &trans        &trans        &trans        &trans                  &trans          &trans           &trans           &trans           &trans           &trans
-&sys_reset   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3            &studio_unlock  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
+&sys_reset   &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3            &studio_unlock  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
 &bootloader  &trans      &trans        &trans        &trans        &trans                  &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
-&to 4        &trans      &trans        &trans        &trans        &trans                  &trans          &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &to 4
+&to 4        &bt BT_CLR  &trans        &trans        &trans        &trans                  &trans          &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &to 4
                          &trans        &trans                                                                               &trans           &trans
                                                      &trans        &trans        &trans    &trans          &trans           &trans
                                                      &trans        &trans        &trans    &trans          &trans           &trans
@@ -53,14 +53,14 @@
 
         Auto_Mouse_Layer {
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-                &trans     &trans                                                  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
-                                      &trans     &trans  &trans    &trans  &trans  &trans
+&trans                                  &trans                             &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans                                  &trans                             &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans                                  &trans                             &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans                                  &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &trans                             &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
+                                                                           &trans     &trans                                                  &trans  &trans
+                                                                                                 &trans     &trans  &trans    &trans  &trans  &trans
+                                                                                                 &trans     &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -96,7 +96,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        // activate layer 3 within 500ms of the trackball moving,,,,
+        // activate layer 3 within 500ms of the trackball moving,,,,,
         <&zip_temp_layer 3 500>;
 };
 
@@ -104,10 +104,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,
         <&zip_xy_scaler 1 6>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
