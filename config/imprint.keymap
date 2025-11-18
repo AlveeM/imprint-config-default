@@ -14,14 +14,14 @@
 
         default_layer {
             bindings = <
-&none       &none  &none     &none         &none     &none                          &none           &none          &none           &none      &none     &none
-&none       &none  &none     &none         &none     &none                          &none           &none          &none           &none      &none     &none
-&kp ESC     &kp Q  &kp W     &kp E         &kp R     &kp T                          &kp Y           &kp U          &kp I           &kp O      &kp P     &kp BACKSPACE
-&kp TAB     &kp A  &kp S     &kp D         &kp F     &kp G                          &kp H           &kp J          &kp K           &kp L      &kp SEMI  &kp SQT
-&kp LSHIFT  &kp Z  &kp X     &kp C         &kp V     &kp B                          &kp N           &kp M          &kp COMMA       &kp DOT    &kp FSLH  &kp RET
-                   &kp DOWN  &kp UP_ARROW                                                                          &kp LEFT_ARROW  &kp RIGHT
-                                           &kp LALT  &kp LCTRL    &mo 2             &kp LG(LSHIFT)  &kp LA(LCTRL)  &kp BSPC
-                                           &kp LGUI  &lt 5 SPACE  &kp LEFT_SHIFT    &kp LG(LALT)    &mo 1          &kp RETURN
+&none       &none  &none     &none         &none     &none                          &none           &none         &none           &none      &none     &none
+&none       &none  &none     &none         &none     &none                          &none           &none         &none           &none      &none     &none
+&kp ESC     &kp Q  &kp W     &kp E         &kp R     &kp T                          &kp Y           &kp U         &kp I           &kp O      &kp P     &kp BACKSPACE
+&kp TAB     &kp A  &kp S     &kp D         &kp F     &kp G                          &kp H           &kp J         &kp K           &kp L      &kp SEMI  &kp SQT
+&kp LSHIFT  &kp Z  &kp X     &kp C         &kp V     &kp B                          &kp N           &kp M         &kp COMMA       &kp DOT    &kp FSLH  &kp RET
+                   &kp DOWN  &kp UP_ARROW                                                                         &kp LEFT_ARROW  &kp RIGHT
+                                           &kp LALT  &kp LCTRL    &mo 2             &trans          &kp LC(LALT)  &kp LG(LALT)
+                                           &kp LGUI  &lt 5 SPACE  &kp LEFT_SHIFT    &kp LG(LSHIFT)  &mo 1         &kp RETURN
             >;
         };
 
@@ -53,14 +53,14 @@
 
         Auto_Mouse_Layer {
             bindings = <
-&trans  &trans  &trans     &trans     &trans  &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans  &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans  &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans  &trans            &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans  &trans            &trans  &trans     &trans     &trans  &trans  &trans
-                &mkp LCLK  &mkp RCLK                                               &trans     &trans
-                                      &trans  &trans  &trans    &trans  &mkp LCLK  &mkp RCLK
-                                      &trans  &trans  &trans    &trans  &trans     &trans
+&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
+                &mkp LCLK  &mkp RCLK                                                                          &trans     &trans
+                                      &trans  &trans  &trans    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &mkp LCLK  &mkp RCLK
+                                      &trans  &trans  &trans    &trans                             &trans     &trans
             >;
         };
 
@@ -96,7 +96,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        // activate layer 3 within 500ms of the trackball moving,,,,,,,,,,,,
+        // activate layer 3 within 500ms of the trackball moving,,,,,,,,,,,,,
         <&zip_temp_layer 3 500>;
 };
 
@@ -104,10 +104,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 6>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
