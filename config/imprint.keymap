@@ -20,7 +20,7 @@
 &kp CAPSLOCK  &kp A  &kp S     &kp D         &kp F     &kp G                          &kp H     &kp J      &kp K           &kp L      &kp SEMI  &kp SQT
 &kp LSHIFT    &kp Z  &kp X     &kp C         &kp V     &kp B                          &kp N     &kp M      &kp COMMA       &kp DOT    &kp FSLH  &kp RSHFT
                      &kp DOWN  &kp UP_ARROW                                                                &kp LEFT_ARROW  &kp RIGHT
-                                             &kp LALT  &kp LCTRL    &mo 4             &kp RALT  &kp RCTRL  &mo 1
+                                             &kp LALT  &kp LCTRL    &mo 5             &kp RALT  &kp RCTRL  &mo 1
                                              &kp LGUI  &lt 3 SPACE  &kp LEFT_SHIFT    &kp RCMD  &mo 2      &kp RETURN
             >;
         };
@@ -64,6 +64,19 @@
             >;
         };
 
+        Auto_Mouse_Layer {
+            bindings = <
+&trans  &trans  &trans    &trans    &trans  &trans            &trans                             &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans            &trans                             &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans            &trans                             &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans            &trans                             &trans    &trans    &trans  &trans  &trans
+&trans  &trans  &trans    &trans    &trans  &trans            &trans                             &trans    &trans    &trans  &trans  &trans
+                &mkp MB1  &mkp MB2                                                                         &trans    &trans
+                                    &trans  &trans  &trans    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &mkp MB1  &mkp MB2
+                                    &trans  &trans  &trans    &trans                             &trans    &trans
+            >;
+        };
+
         Keyboard_Control_Layer {
             bindings = <
 &trans  &trans      &trans        &trans        &trans        &trans                  &trans          &trans           &trans           &trans           &trans           &trans
@@ -74,19 +87,6 @@
                     &trans        &trans                                                                               &trans           &trans
                                                 &trans        &trans        &trans    &trans          &trans           &trans
                                                 &trans        &trans        &trans    &trans          &trans           &trans
-            >;
-        };
-
-        Auto_Mouse_Layer {
-            bindings = <
-&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans  &trans            &trans                             &trans     &trans     &trans  &trans  &trans
-                &mkp LCLK  &mkp RCLK                                                                          &trans     &trans
-                                      &trans  &trans  &trans    &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &mkp LCLK  &mkp RCLK
-                                      &trans  &trans  &trans    &trans                             &trans     &trans
             >;
         };
 
@@ -109,7 +109,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        // activate layer 3 within 500ms of the trackball moving,,,,,,,,,,,,,,,,
+        // activate layer 3 within 500ms of the trackball moving,,,,,,,,,,,,,,,,,
         <&zip_temp_layer 3 500>;
 };
 
@@ -117,10 +117,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 10 (make it slower for scrolling),,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 10 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 10>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
